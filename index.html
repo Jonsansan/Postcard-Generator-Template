@@ -1,91 +1,351 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Postcard Generator</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Boogaloo|Open+Sans:300,400|Oswald:700">
-	<link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Postcard Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Boogaloo|Open+Sans:300,400|Oswald:700" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <div class="outer-wrapper">
+      <div class="content-wrapper">
+        <header>
+          <h1>Postcard Generator</h1>
+          <p class="subtitle">Generate Postcards of All 50 America States</p>
+        </header>
+        <main role="main">
+          <div class="first step">
+            <h2>1. Choose a State</h2>
+            <select name="states" id="states">
+              <option selected disabled value="empty-state">United States of America</option>
+              <option value="al">Alabama</option>
+              <option value="ak">Alaska</option>
+              <option value="az">Arizona</option>
+              <option value="ar">Arkansas</option>
+              <option value="ca">California</option>
+              <option value="co">Colorado</option>
+              <option value="ct">Connecticut</option>
+              <option value="de">Delaware</option>
+              <option value="dc">District of Columbia</option>
+              <option value="fl">Florida</option>
+              <option value="ga">Georgia</option>
+              <option value="hi">Hawaii</option>
+              <option value="id">Idaho</option>
+              <option value="il">Illinois</option>
+              <option value="in">Indiana</option>
+              <option value="ia">Iowa</option>
+              <option value="ks">Kansas</option>
+              <option value="ky">Kentucky</option>
+              <option value="la">Louisiana</option>
+              <option value="me">Maine</option>
+              <option value="md">Maryland</option>
+              <option value="ma">Massachusetts</option>
+              <option value="mi">Michigan</option>
+              <option value="mn">Minnesota</option>
+              <option value="ms">Mississippi</option>
+              <option value="mo">Missouri</option>
+              <option value="mt">Montana</option>
+              <option value="ne">Nebraska</option>
+              <option value="nv">Nevada</option>
+              <option value="nh">New Hampshire</option>
+              <option value="nj">New Jersey</option>
+              <option value="nm">New Mexico</option>
+              <option value="ny">New York</option>
+              <option value="nc">North Carolina</option>
+              <option value="nd">North Dakota</option>
+              <option value="oh">Ohio</option>
+              <option value="ok">Oklahoma</option>
+              <option value="or">Oregon</option>
+              <option value="pa">Pennsylvania</option>
+              <option value="ri">Rhode Island</option>
+              <option value="sc">South Carolina</option>
+              <option value="sd">South Dakota</option>
+              <option value="tn">Tennessee</option>
+              <option value="tx">Texas</option>
+              <option value="ut">Utah</option>
+              <option value="vt">Vermont</option>
+              <option value="va">Virginia</option>
+              <option value="wa">Washington</option>
+              <option value="wv">West Virginia</option>
+              <option value="wi">Wisconsin</option>
+              <option value="wy">Wyoming</option>
+            </select>
+          </div>
+          <div class="d-none" id="Alaska-div">
+            <div class="container-al">
+              <img id="ak-img" src="images/ak.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Alabama-div">
+            <div class="container-al">
+              <img id="al-img" src="images/al.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Arizona-div">
+            <div class="container-az">
+              <img id="az-img" src="images/az.jpg" />
+            </div>
+          </div>
 
-<div class="outer-wrapper">
-	<div class="content-wrapper">
-		<header>
-			<h1>Postcard Generator</h1>
-			<p class="subtitle">Generate Postcards of All 50 American States</p>
-		</header>
-		<main role="main">
-			<div class="first step">
-				<h2>1. Choose a State</h2>
-				<select name="states" id="states">
-					<option selected disabled value="empty-state">United States of America</option>
-					<option value="al">Alabama</option>
-					<option value="ak">Alaska</option>
-					<option value="az">Arizona</option>
-					<option value="ar">Arkansas</option>
-					<option value="ca">California</option>
-					<option value="co">Colorado</option>
-					<option value="ct">Connecticut</option>
-					<option value="de">Delaware</option>
-					<option value="dc">District of Columbia</option>
-					<option value="fl">Florida</option>
-					<option value="ga">Georgia</option>
-					<option value="hi">Hawaii</option>
-					<option value="id">Idaho</option>
-					<option value="il">Illinois</option>
-					<option value="in">Indiana</option>
-					<option value="ia">Iowa</option>
-					<option value="ks">Kansas</option>
-					<option value="ky">Kentucky</option>
-					<option value="la">Louisiana</option>
-					<option value="me">Maine</option>
-					<option value="md">Maryland</option>
-					<option value="ma">Massachusetts</option>
-					<option value="mi">Michigan</option>
-					<option value="mn">Minnesota</option>
-					<option value="ms">Mississippi</option>
-					<option value="mo">Missouri</option>
-					<option value="mt">Montana</option>
-					<option value="ne">Nebraska</option>
-					<option value="nv">Nevada</option>
-					<option value="nh">New Hampshire</option>
-					<option value="nj">New Jersey</option>
-					<option value="nm">New Mexico</option>
-					<option value="ny">New York</option>
-					<option value="nc">North Carolina</option>
-					<option value="nd">North Dakota</option>
-					<option value="oh">Ohio</option>
-					<option value="ok">Oklahoma</option>
-					<option value="or">Oregon</option>
-					<option value="pa">Pennsylvania</option>
-					<option value="ri">Rhode Island</option>
-					<option value="sc">South Carolina</option>
-					<option value="sd">South Dakota</option>
-					<option value="tn">Tennessee</option>
-					<option value="tx">Texas</option>
-					<option value="ut">Utah</option>
-					<option value="vt">Vermont</option>
-					<option value="va">Virginia</option>
-					<option value="wa">Washington</option>
-					<option value="wv">West Virginia</option>
-					<option value="wi">Wisconsin</option>
-					<option value="wy">Wyoming</option>
-				</select>
-			</div>
-			<div class="second step">
-				<h2>2. Enjoy Your Postcard!</h2>
-				<div id="postcard">
-					<p id="greeting">To Generate a Postcard</p>
-					<p id="state-heading">Choose a state</p>
-				</div>
-			</div>
-		</main>
-	</div>
-</div>
-<footer>
-	<p>Made in NY <br>Copyright © Postcard Generator</p>
-</footer>
+          <div class="d-none" id="Arkansas-div">
+            <div class="container-ar">
+              <img id="ar-img" src="images/ar.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="California-div">
+            <div class="container-ca">
+              <img id="ca-img" src="images/ca.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Colorado-div">
+            <div class="container-co">
+              <img id="co-img" src="images/co.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Connecticut-div">
+            <div class="container-ct">
+              <img id="ct-img" src="images/ct.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Delaware-div">
+            <div class="container-de">
+              <img id="de-img" src="images/de.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="District-of-Columbia-div">
+            <div class="container-dc">
+              <img id="dc-img" src="images/dc.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Florida-div">
+            <div class="container-fl">
+              <img id="fl-img" src="images/fl.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Georgia-div">
+            <div class="container-ga">
+              <img id="ga-img" src="images/ga.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Hawaii-div">
+            <div class="container-hi">
+              <img id="hi-img" src="images/hi.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Idaho-div">
+            <div class="container-id">
+              <img id="id-img" src="images/id.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Illinois-div">
+            <div class="container-il">
+              <img id="il-img" src="images/il.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Indiana-div">
+            <div class="container-in">
+              <img id="in-img" src="images/in.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Iowa-div">
+            <div class="container-ia">
+              <img id="ia-img" src="images/ia.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Kansas-div">
+            <div class="container-ks">
+              <img id="ks-img" src="images/ks.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Kentucky-div">
+            <div class="container-ky">
+              <img id="ky-img" src="images/ky.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Louisiana-div">
+            <div class="container-la">
+              <img id="la-img" src="images/la.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Maine-div">
+            <div class="container-me">
+              <img id="me-img" src="images/me.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Maryland-div">
+            <div class="container-md">
+              <img id="md-img" src="images/md.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Massachusetts-div">
+            <div class="container-ma">
+              <img id="ma-img" src="images/ma.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Michigan-div">
+            <div class="container-mi">
+              <img id="mi-img" src="images/mi.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Minnesota-div">
+            <div class="container-mn">
+              <img id="mn-img" src="images/mn.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Mississippi-div">
+            <div class="container-ms">
+              <img id="ms-img" src="images/ms.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Missouri-div">
+            <div class="container-mo">
+              <img id="mo-img" src="images/mo.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Montana-div">
+            <div class="container-mt">
+              <img id="mt-img" src="images/mt.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Nebraska-div">
+            <div class="container-ne">
+              <img id="ne-img" src="images/ne.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Nevada-div">
+            <div class="container-nv">
+              <img id="nv-img" src="images/nv.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="New-Hampshire-div">
+            <div class="container-nh">
+              <img id="nh-img" src="images/nh.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="New-Jersey-div">
+            <div class="container-nj">
+              <img id="nj-img" src="images/nj.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="New-Mexico-div">
+            <div class="container-nm">
+              <img id="nm-img" src="images/nm.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="New-York-div">
+            <div class="container-ny">
+              <img id="ny-img" src="images/ny.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="North-Carolina-div">
+            <div class="container-nc">
+              <img id="nc-img" src="images/nc.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="North-Dakota-div">
+            <div class="container-nd">
+              <img id="nd-img" src="images/nd.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Ohio-div">
+            <div class="container-oh">
+              <img id="oh-img" src="images/oh.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Oklahoma-div">
+            <div class="container-ok">
+              <img id="ok-img" src="images/ok.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Oregon-div">
+            <div class="container-or">
+              <img id="or-img" src="images/or.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Pennsylvania-div">
+            <div class="container-pa">
+              <img id="pa-img" src="images/pa.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Rhode-Island-div">
+            <div class="container-ri">
+              <img id="ri-img" src="images/ri.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="South-Carolina-div">
+            <div class="container-sc">
+              <img id="sc-img" src="images/sc.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="South-Dakota-div">
+            <div class="container-sd">
+              <img id="sd-img" src="images/sd.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Tennessee-div">
+            <div class="container-tn">
+              <img id="tn-img" src="images/tn.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Texas-div">
+            <div class="container-tx">
+              <img id="tx-img" src="images/tx.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Utah-div">
+            <div class="container-ut">
+              <img id="ut-img" src="images/ut.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Vermont-div">
+            <div class="container-vt">
+              <img id="vt-img" src="images/vt.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Virginia-div">
+            <div class="container-va">
+              <img id="va-img" src="images/va.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Washington-div">
+            <div class="container-wa">
+              <img id="wa-img" src="images/wa.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="West-Virginia-div">
+            <div class="container-wv">
+              <img id="wv-img" src="images/wv.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Wisconsin-div">
+            <div class="container-wi">
+              <img id="wi-img" src="images/wi.jpg" />
+            </div>
+          </div>
+          <div class="d-none" id="Wyoming-div">
+            <div class="container-wy">
+              <img id="wy-img" src="images/wy.jpg" />
+            </div>
+          </div>
 
-</body>
+          <div class="second step">
+            <h2>2. Enjoy Your Postcard!</h2>
+            <div id="postcard">
+              <p id="greeting">To Generate a Postcard</p>
+              <p id="state-heading">Choose a state</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <footer>
+      <p>Made in NY <br />Copyright © Postcard Generator</p>
+    </footer>
+  </body>
 </html>
