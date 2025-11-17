@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selectedState) {
       document.getElementById("greeting").textContent = `Hello from ${selectedState}!`;
       document.getElementById("state-heading").innerHTML = `Welcome to ${selectedState}`;
-      postcard.style.backgroundImage = `url('img/${selectedState.toLowerCase()}.jpg')`;
-      /*       const stateAbbr = selectedState;
-      const imagePath = `img/${stateAbbr.toLowerCase()}.jpg`;
+      postcard.style.backgroundImage = `url('images/${selectedState.toLowerCase()}.jpg')`;
+      const stateAbbr = selectedState;
+      const imagePath = `images/${stateAbbr.toLowerCase()}.jpg`;
       postcardImage.setAttribute("src", imagePath);
-      postcardImage.setAttribute("alt", `Postcard from ${stateAbbr}`); */
+      postcardImage.setAttribute("alt", `Postcard from ${stateAbbr}`);
     }
   });
 });

@@ -84,7 +84,7 @@ select {
   width: 280px;
   height: 202px;
   position: absolute;
-  background-image: url("../img/empty-state.jpg");
+  background-image: url("../images/empty-state.jpg");
   background-size: cover;
   box-shadow: 3px 6px 20px 0 rgba(0, 0, 0, 0.5);
   padding-top: 58px;
